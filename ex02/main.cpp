@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 # define true 1
 # define false 0
 
@@ -9,18 +10,13 @@
 int main(){
 
     // ClapTrap a("Carl");
-    ScavTrap a("Roger");
-    ScavTrap b("Bob");
+    FragTrap a("Greg");
+    FragTrap b("Julia");
 
-    //Test HP
-    // a.attack("Roger");
-    // a.takeDamage(10);
-    // a.attack("Roger");
-    //Test EP
-    for(int i = 0; i < 52; i++){
-        b.attack("a");
+    //Test attack
+    for(int i = 0; i < 102; i++){
+        b.attack("Justin");
     }
-    a.guardGate();
+    a.highFivesGuys();
     
-
 }
