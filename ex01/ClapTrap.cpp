@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : Name("No name"), HP(10), EP(10), AD(5) {
-   std::cout << "Clap default constructor called" << std::endl;
+ClapTrap::ClapTrap() : Name("No name"), HP(10), EP(10), AD(0) {
+    std::cout << "Clap default constructor called" << std::endl;
 };
 
-ClapTrap::ClapTrap(std::string newName) : Name(newName), HP(10), EP(10), AD(5) {
+ClapTrap::ClapTrap(std::string newName) : Name(newName), HP(10), EP(10), AD(0) {
     std::cout << "Clap default constructor with parameter called" << std::endl;
 
 };
@@ -57,7 +57,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 };
 
 void ClapTrap::beRepaired(unsigned int amount){
-     if (this->EP <= 0 || this->HP <= 0){
+    if (this->EP <= 0 || this->HP <= 0){
         if (this->HP <= 0 && this->EP <= 0)
             std::cout << "ClapTrap " << this->Name << " is out of HP and EP!!!" << std::endl;
         else if (this->HP <= 0)

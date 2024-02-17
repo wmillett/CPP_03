@@ -3,19 +3,19 @@
 
 FragTrap::FragTrap() : ClapTrap(){
    std::cout << "Frag default constructor called" << std::endl;
-    this->Name = "No name";
-    this->HP = 100;
-    this->EP = 100;
-    this->AD = 30;
+    Name = "No name";
+    HP = 100;
+    EP = 100;
+    AD = 30;
 
 };
 
 FragTrap::FragTrap(std::string newName) : ClapTrap(newName) {
     std::cout << "Frag default constructor with parameter called" << std::endl;
-    this->Name = newName;
-    this->HP = 100;
-    this->EP = 100;
-    this->AD = 30;
+    Name = newName;
+    HP = 100;
+    EP = 100;
+    AD = 30;
 };
 
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other){
@@ -26,12 +26,8 @@ FragTrap::FragTrap(const FragTrap& other): ClapTrap(other){
 FragTrap& FragTrap::operator=(const FragTrap& other){
 
     std::cout << "Frag copy assignment operator called" << std::endl;
-    if (this != &other) {
-        this->Name = other.Name;
-        this->HP = other.HP;
-        this->EP = other.EP;
-        this->AD = other.AD;
-    }
+    if (this != &other)
+        ClapTrap::operator=(other);
     return *this;
 };
 
@@ -39,8 +35,8 @@ FragTrap::~FragTrap(){
     std::cout << "Frag destructor called" << std::endl;
 };
 
-void FragTrap::highFivesGuys(){
-    std::cout << "FragTrap " << this->Name << " has given you a high five!" << std::endl;
+void FragTrap::highFivesGuys() {
+    std::cout << "FragTrap " << this->Name << " asks you for a high five" << std::endl;
 };
 
 void FragTrap::attack(const std::string& target){

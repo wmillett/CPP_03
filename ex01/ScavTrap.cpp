@@ -3,19 +3,19 @@
 
 ScavTrap::ScavTrap() : ClapTrap(){
    std::cout << "Scav default constructor called" << std::endl;
-    this->Name = "No name";
-    this->HP = 100;
-    this->EP = 50;
-    this->AD = 20;
+    Name = "No name";
+    HP = 100;
+    EP = 50;
+    AD = 20;
 
 };
 
 ScavTrap::ScavTrap(std::string newName) : ClapTrap(newName) {
     std::cout << "Scav default constructor with parameter called" << std::endl;
-    this->Name = newName;
-    this->HP = 100;
-    this->EP = 50;
-    this->AD = 20;
+    Name = newName;
+    HP = 100;
+    EP = 50;
+    AD = 20;
 };
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other){
@@ -26,12 +26,8 @@ ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other){
 ScavTrap& ScavTrap::operator=(const ScavTrap& other){
 
     std::cout << "Scav copy assignment operator called" << std::endl;
-    if (this != &other) {
-        this->Name = other.Name;
-        this->HP = other.HP;
-        this->EP = other.EP;
-        this->AD = other.AD;
-    }
+    if (this != &other)
+        ClapTrap::operator=(other);
     return *this;
 };
 
@@ -41,7 +37,7 @@ ScavTrap::~ScavTrap(){
 
 void ScavTrap:: guardGate(){
     if (this->HP > 0)
-        std::cout << "ScavTrap " << this->Name << " is not in Gate keeper mode" << std::endl;
+        std::cout << "ScavTrap " << this->Name << " is in Gate keeper mode" << std::endl;
     else
         std::cout << "ScavTrap " << this->Name << " cannot be in Gate keeper mode" << std::endl;
 };

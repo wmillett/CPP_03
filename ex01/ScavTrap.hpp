@@ -7,11 +7,6 @@
 
 class ScavTrap : public ClapTrap{
 
-    private:
-        std::string Name;
-        int HP;
-        int EP;
-        int AD;
     public:
         ScavTrap();
         ScavTrap(std::string newName);
@@ -22,9 +17,6 @@ class ScavTrap : public ClapTrap{
         void attack(const std::string& target);
         void guardGate();
 };
-
-
-
 
 
 #endif
